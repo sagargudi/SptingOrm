@@ -1,0 +1,91 @@
+package com.sagar.orm;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.sagar.orm.dao.StudentDao;
+import com.sagar.orm.entities.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		StudentDao stu = context.getBean("studentDao", StudentDao.class);
+
+		/*
+		 * Student student= new Student(2324,"sagar","karnataka");
+		 * 
+		 * int r=stu.insert(student); System.out.println("done "+ r);
+		 */
+		boolean go = true;
+		while (go) {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Press 1 for adding user");
+			System.out.println("Press 2 for display all user");
+			System.out.println("Press 3 for display one user");
+			System.out.println("Press 3 for delete user");
+			System.out.println("Press 5 for update user");
+			System.out.println("Press 6 for exit");
+
+			try {
+				int input = Integer.parseInt(br.readLine());
+				switch (input) {
+
+				case 1:
+					// taking input from user
+					System.out.println("enter User id :"); // id
+					int uid = Integer.parseInt(br.readLine()); // taking input storing in uid
+					System.out.println("enter UserName :"); // name
+					String uname = br.readLine(); // taking input storing in uname
+					System.out.println("enter User's City :"); // city
+					String ucity = br.readLine(); // taking input and storing in ucity
+					// creating the object of student
+					Student s1 = new Student();
+					// setting values
+					s1.setId(uid);
+					s1.setName(uname);
+					s1.setCity(ucity);
+					int r1 = stu.insert(s1); // calling insert method
+					System.out.println(r1 + "Student added");
+					System.out.println("==========================================");
+					System.out.println();
+					break;
+
+				case 2:
+					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@);
+					List<Student> allStudent = stu.getAllstudent();
+					for (Student s2 : allStudent) {
+						System.out.println("Id: " + s2.getId());
+						System.out.println("Name: " + s2.getName());
+						System.out.println("City: " + s2.getCity());
+					}
+System.out.println("---------------------------------------------------------------");
+					break;
+
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6:
+					go = false;
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				System.out.println("invalid input");
+				System.out.println(e.getMessage());
+			}
+		}
+
+	}
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=SpringOrm/C:\/Users\/Sagar\/.m2\/repository\/org\/springframework\/spring-orm\/5.3.3\/spring-orm-5.3.3.jar&lt;org.springframework.orm.hibernate5(HibernateTemplate.class[HibernateTemplate" modifiers="33" timestamp="1612704296090"/>
+<typeInfo handle="=SpringOrm/C:\/Users\/Sagar\/.m2\/repository\/org\/springframework\/spring-orm\/5.3.3\/spring-orm-5.3.3.jar&lt;org.springframework.orm.hibernate5(LocalSessionFactoryBean.class[LocalSessionFactoryBean" modifiers="33" timestamp="1612704296090"/>
+<typeInfo handle="=SpringOrm/C:\/Users\/Sagar\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.4.2.Final\/hibernate-core-5.4.2.Final.jar&lt;org.hibernate.dialect(MySQL57Dialect.class[MySQL57Dialect" modifiers="33" timestamp="1612706227705"/>
+<typeInfo handle="=SpringOrm/C:\/Users\/Sagar\/.m2\/repository\/org\/springframework\/spring-jdbc\/5.3.3\/spring-jdbc-5.3.3.jar&lt;org.springframework.jdbc.datasource(DriverManagerDataSource.class[DriverManagerDataSource" modifiers="33" timestamp="1612704296513"/>
+<typeInfo handle="=SpringOrm/C:\/Users\/Sagar\/.m2\/repository\/org\/springframework\/spring-orm\/5.3.3\/spring-orm-5.3.3.jar&lt;org.springframework.orm.hibernate5(HibernateTransactionManager.class[HibernateTransactionManager" modifiers="33" timestamp="1612704296090"/>
+</typeInfoHistroy>

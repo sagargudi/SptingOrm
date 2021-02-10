@@ -1,0 +1,5 @@
+package com.sagar.orm.entities;
+
+public class Student {
+
+}

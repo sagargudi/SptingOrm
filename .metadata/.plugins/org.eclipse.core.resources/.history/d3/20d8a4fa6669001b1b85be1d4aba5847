@@ -1,0 +1,19 @@
+package com.sagar.orm.dao;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.sagar.orm.entities.Student;
+
+public class StudentDao {
+
+	private HibernateTemplate hibernate;
+	
+	public int insert(Student student) {
+		//insert
+		Integer i= (Integer) this.hibernate.save(student);
+		return i;
+		
+	}
+	
+	
+}

@@ -1,0 +1,63 @@
+package com.sagar.orm.dao;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.LockMode;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.sagar.orm.entities.Student;
+
+public class StudentDao {
+
+	private HibernateTemplate hibernate;
+
+	// insert
+	@Transactional
+	public int insert(Student student) {
+
+		Integer i = (Integer) this.hibernate.save(student);
+		return i;
+
+	}
+	// get the single object
+
+	public Student getStudent(int StudentId) {
+
+		Student record1 = this.hibernate.get(Student.class, StudentId);
+		return record1;
+
+	}
+
+	// getMultipledata
+	public List<Student> getAllstudent() {
+
+		List<Student> records = this.hibernate.loadAll(Student.class);
+		return records;
+	}
+	@Transactional
+	public Student deleteStudent(int StudentId) {
+		Student delrecord = this.hibernate.get(Student.class, StudentId);
+		this.hibernate.delete(delrecord);
+		return delrecord;
+		
+	}
+	
+	
+	//updating data
+	@Transactional
+	public Student updateStudent(Student student) {
+	Student r1=this.hibernate.update(student);
+		return r1;
+	}
+
+	public HibernateTemplate getHibernate() {
+		return hibernate;
+	}
+
+	public void setHibernate(HibernateTemplate hibernate) {
+		this.hibernate = hibernate;
+	}
+
+}
